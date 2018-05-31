@@ -49,7 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="INFShopDbContext.cs" />
+    <Compile Include="Migrations\201805311539076_InitialINFShop.cs" />
+    <Compile Include="Migrations\201805311539076_InitialINFShop.Designer.cs">
+      <DependentUpon>201805311539076_InitialINFShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ProductCategotyRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -60,6 +75,18 @@
       <Project>{dd5ebabc-5b85-4797-b004-1d633635106f}</Project>
       <Name>INFShop.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\INFShop.Model\INFShop.Model.csproj">
+      <Project>{34ccfe67-e503-4a1b-9103-152ff16c67b4}</Project>
+      <Name>INFShop.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805311539076_InitialINFShop.resx">
+      <DependentUpon>201805311539076_InitialINFShop.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
